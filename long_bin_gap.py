@@ -1,3 +1,5 @@
+#15==>1111==>no
+
 n=int(input())
 l=[]
 b=bin(n)
