@@ -15,7 +15,6 @@ class bike:
         print("Cost:{}".format(self.f))
         print("")
     def __eq__(self, other):
-        """Overrides the default implementation"""
         if isinstance(other, bike):
             return self.a==other.a and self.b==other.b and self.c==other.c and self.d==other.d and self.e==other.e and self.f==other.f
         return False
