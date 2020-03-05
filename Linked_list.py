@@ -25,17 +25,23 @@ if __name__=='__main__':
         if n==2:
             n=int(input())
             temp=llist.head
-            while(temp is not None):
+            if temp is not None:
                 if temp.data==n:
                     llist.head=temp.next
                     temp=None
                     llist.printList()
-                else:
-                    temp=temp.next
+            while temp is not None: 
+                if temp.data==n: 
+                    break
+            pre=temp 
+            temp=temp.next
+            if temp==None: 
+                llist.printList()
+            pre.next=temp.next
+            temp = None
         if n==3:
             llist.printList()
             exit()
     
-   
-
+  
     
