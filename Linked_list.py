@@ -60,11 +60,19 @@ class LinkedList:
             count+=1
         if c==0:
             print("not")
-                
+    def reverse(self):
+        prev=None
+        temp=self.head 
+        while temp is not None: 
+            tempv=temp.next
+            temp.next=prev 
+            prev=temp 
+            temp=tempv
+        self.head = prev
 if __name__=='__main__': 
     llist = LinkedList() 
     while(1):
-        print("1.Insert\n2.Delete\n3.Search\n4.Exit")
+        print("1.Insert\n2.Delete\n3.Search\n4.Reverse\n5.Exit")
         n=int(input())
         if n==1:
             llist.insert()
@@ -81,6 +89,8 @@ if __name__=='__main__':
         if n==3:   
             dat=int(input())
             llist.search(dat)
-        if n==4:  
+        if n==4:
+            llist.reverse()
+        if n==5:  
             llist.printList()
             exit()
