@@ -47,10 +47,24 @@ class LinkedList:
                 tempf.next=temph
                 break
             temp = temp.next
+    def search(self,dat):
+        temp=self.head
+        count=0
+        c=0
+        while temp!=None:
+            if temp.data==dat:
+                count+=1
+                c=count
+                print(count)
+            temp=temp.next
+            count+=1
+        if c==0:
+            print("not")
+                
 if __name__=='__main__': 
     llist = LinkedList() 
     while(1):
-        print("1.Insert\n2.Delete\n3.Exit")
+        print("1.Insert\n2.Delete\n3.Search\n4.Exit")
         n=int(input())
         if n==1:
             llist.insert()
@@ -60,10 +74,13 @@ if __name__=='__main__':
             if n==1:
                 llist.deletehead()
             if n==2:
-                pos=int(input())
+                pos=int(input()) 
                 llist.deletepos(pos)
             if n==3:
-                print(llist.deletelast())
-        if n==3:
+                print(llist.deletelast()) 
+        if n==3:   
+            dat=int(input())
+            llist.search(dat)
+        if n==4:  
             llist.printList()
             exit()
