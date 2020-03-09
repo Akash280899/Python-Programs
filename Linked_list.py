@@ -70,18 +70,12 @@ class LinkedList:
             temp=tempv
         self.head = prev
     def deleteFromStart(self):    
-        
         if(self.head == None):    
             return;    
         else:    
-             
             if(self.head != self.tail):    
-                
                 self.head = self.head.next;    
-                 
                 self.head.previous = None;    
-                    
-           
             else:    
                 self.head = self.tail = None;    
 if __name__=='__main__': 
