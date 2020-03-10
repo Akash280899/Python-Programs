@@ -77,13 +77,27 @@ class LinkedList:
                 self.head = self.head.next;    
                 self.head.previous = None;    
             else:    
-                self.head = self.tail = None;    
+                self.head = self.tail = None;   
+    /*def reversesplit(self,head,k): 
+        current = self.head  
+        #next  = None
+        prev = None
+        count = 0 
+        while(current is not None and count < k): 
+            next = current.next
+            current.next = prev 
+            prev = current 
+            current = next 
+            count += 1
+        if next is not None: 
+            self.head.next = self.reversesplit(next, k) */
+        #return prev 
 if __name__=='__main__': 
     llist = LinkedList() 
     while(1):
-        print("1.Insert\n2.Delete\n3.Search\n4.Reverse\n5.Exit")
+        print("1.Insert\n2.Delete\n3.Search\n4.Reverse\n5.Split Reverse\n6.Exit")
         n=int(input())
-        if n==1:
+        if n==1: 
             llist.insert()
         if n==2:
             print("1.Head\n2.Position\n3.Last")
@@ -100,6 +114,9 @@ if __name__=='__main__':
             llist.search(dat)
         if n==4:
             llist.reverse()
-        if n==5:  
+        if n==5:
+            llist.reversesplit(llist.head,int(input()))
+            llist.printList()
+        if n==6:  
             llist.printList()
             exit()
