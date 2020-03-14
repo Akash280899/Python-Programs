@@ -1,14 +1,11 @@
 '''clu=[["c1","200","400"],["c2","200","300"],["c3","100","100"],["c4","150","300"]]
 pipe1=["c1","c3",["c1","c2"],["c3","c4"]]'''
 days=int(input())
-
 cl=int(input())
+days1=1
 clu=[]
 pipe1=[]
 e=[]
-days1=1
-
-
 for i in range(cl):
     a=input().split()
     clu.append(a)
@@ -39,9 +36,9 @@ while(days1<=days):
             if(isinstance(d, list)):
                 for k in range(len(d)):
                     for l in range(len(clu)):
-                        if e[-1]!=clu[l][2]:
-                            if (d[k]==clu[l][0]):
-                                e.append(int(clu[l][2]))
+                        if (d[k]==clu[l][0]):
+                            if(int(clu[l][2])==e[-1]):
+                                continue
                         else:
                             e.append(int(clu[l][2]))
             else:
