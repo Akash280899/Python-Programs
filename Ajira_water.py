@@ -39,8 +39,8 @@ while(days1<=days):
                         if (d[k]==clu[l][0]):
                             if(int(clu[l][2])==e[-1]):
                                 continue
-                        else:
-                            e.append(int(clu[l][2]))
+                            else:
+                                e.append(int(clu[l][2]))
             else:
                 for l in range(len(clu)):
                     if (d==clu[l][0]):
