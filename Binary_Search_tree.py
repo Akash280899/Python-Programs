@@ -41,6 +41,16 @@ def deleteNode(root, key):
         root.key = temp.key 
         root.right = deleteNode(root.right , temp.key) 
     return root 
+def maxDepth(node): 
+    if node is None: 
+        return 0 ; 
+    else :  
+        lDepth = maxDepth(node.left) 
+        rDepth = maxDepth(node.right) 
+        if (lDepth > rDepth): 
+            return lDepth+1
+        else: 
+            return rDepth+1
 if __name__=="__main__":
     root = None
     root = insert(root, 50) 
@@ -57,3 +67,4 @@ if __name__=="__main__":
     inorder(root) 
     root = deleteNode(root, 50) 
     inorder(root) 
+    print(maxDepth(root))
