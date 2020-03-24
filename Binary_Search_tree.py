@@ -16,6 +16,24 @@ def insert( node, key):
     else: 
         node.right = insert(node.right, key) 
     return node 
+def insert(root,node): 
+    if root is None: 
+        root = node 
+    else: 
+        if root.val==node.val:
+            return 0
+        elif root.val < node.val: 
+            if root.right is None: 
+                root.right = node 
+            else: 
+                insert(root.right, node) 
+        else: 
+            if root.val==node.val:
+                return 0
+            elif root.left is None: 
+                root.left = node 
+            else: 
+                insert(root.left, node) 
 def minValueNode( node): 
     current = node 
     while(current.left is not None): 
