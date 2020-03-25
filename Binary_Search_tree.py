@@ -34,6 +34,26 @@ def insert(root,node):
                 root.left = node 
             else: 
                 insert(root.left, node) 
+def distanceFromRoot(root, x): 
+    if root.key == x: 
+        return 0
+    elif root.key > x: 
+        return 1 + distanceFromRoot(root.left, x) 
+    return 1 + distanceFromRoot(root.right, x) 
+def distanceBetween2(root, a, b): 
+    if root == None: 
+        return 0
+    if root.key > a and root.key > b: 
+        return distanceBetween2(root.left, a, b)  
+    if root.key < a and root.key < b: # same path 
+        return distanceBetween2(root.right, a, b) 
+    if root.key >= a and root.key <= b: 
+        return (distanceFromRoot(root, a) +
+                distanceFromRoot(root, b)) 
+def findDistWrapper(root, a, b): 
+    if a > b: 
+        a, b = b, a 
+    return distanceBetween2(root, a, b) 
 def minValueNode( node): 
     current = node 
     while(current.left is not None): 
@@ -86,3 +106,5 @@ if __name__=="__main__":
     root = deleteNode(root, 50) 
     inorder(root) 
     print(maxDepth(root))
+    res=findDistWrapper(root, 50, 60)
+    print(res)
