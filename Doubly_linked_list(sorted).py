@@ -42,3 +42,6 @@ nodeInsetail( 5)
 nodeInsetail( 4) 
 print("Doubly linked list on printing from left to right\n" ) 
 printList(head) 
+
+//4 5 6
+//6 5 4
