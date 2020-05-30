@@ -1,5 +1,15 @@
 #gslv f11 in 19,2018==>11 2018
 
+
+import re
+num = "gslv 11,2018 19"
+a = re.split("\\D+",num)
+a.remove("")
+for i in a:
+    if '9' in i:
+        a.remove(i)
+print(a)
+
 t=int(input())
 l=[]
 r=[]
